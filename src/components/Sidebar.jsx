@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { navbar } from '../../public/data.jsx';
 import { social } from '../../public/data.jsx';
 
+
 function openInNewTab(url) {
   const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
   if (newWindow) newWindow.opener = null;
@@ -19,7 +20,7 @@ export default function Sidebar() {
             className="w-12 h-12 rounded-full"
           />
           <div>
-            <h2 className="text-lg font-semibold">Bicky Yadav</h2>
+            <h2 className="text-lg font-semibold">Prem sah</h2>
             <p className="text-gray-500 text-sm">Developer</p>
           </div>
         </div>
@@ -39,8 +40,10 @@ export default function Sidebar() {
                 <span>{social.icon}</span>
                 <span>{social.name}</span>
               </a>
+
             ))}
           </div>
+
         </div>
       </div>
       <button onClick={() => openInNewTab('https://resume.io/resume-examples/driver')} className="bg-black text-white px-4 py-2 rounded-full shadow-md hover:bg-gray-800 transition">
