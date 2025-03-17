@@ -1,13 +1,18 @@
-import React from 'react';
-import Sidebar from './Sidebar';
+import React from "react";
+import Sidebar from "./Sidebar";
 
 const Layout = ({ children }) => {
   return (
-    <div className=" grid  grid-cols-12">
-      <div className="   col-span-2 ">
+    <div className="grid grid-cols-8 h-screen  ">
+      {/* Sidebar */}
+      <div className="col-span-1">
         <Sidebar />
       </div>
-      <div className=" col-span-10">{children}</div>
+
+      {/* Main Content with hidden scrollbar */}
+      <div className=" overflow-y-auto   h-screen col-span-7 ">
+        {children}
+      </div>
     </div>
   );
 };
