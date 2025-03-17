@@ -2,6 +2,11 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { navbar } from '../../public/data.jsx';
 import { social } from '../../public/data.jsx';
 
+function openInNewTab(url) {
+  const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+  if (newWindow) newWindow.opener = null;
+}
+
 export default function Sidebar() {
   const path = useLocation();
   console.log('🚀 ~ Sidebar ~ path:', path);
@@ -12,7 +17,7 @@ export default function Sidebar() {
         <div className="flex items-center space-x-3">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4YreOWfDX3kK-QLAbAL4ufCPc84ol2MA8Xg&s" alt="Bicky yadav" className="w-12 h-12 rounded-full" />
           <div>
-            <h2 className="text-lg font-semibold">Bicky Yadav</h2>
+            <h2 className="text-lg font-semibold">Prem sah</h2>
             <p className="text-gray-500 text-sm">Developer</p>
           </div>
         </div>
@@ -37,8 +42,10 @@ export default function Sidebar() {
                 <span>{social.icon}</span>
                 <span>{social.name}</span>
               </a>
+
             ))}
           </div>
+
         </div>
       </div>
       <NavLink to="https://resume.io/resume-examples/driver" target="_" className="bg-black text-white px-4 py-2 rounded-full shadow-md hover:bg-gray-800 transition">
