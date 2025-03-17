@@ -1,23 +1,16 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { navbar } from '../../public/data.jsx';
 import { social } from '../../public/data.jsx';
 
-function openInNewTab(url) {
-  const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
-  if (newWindow) newWindow.opener = null;
-}
-
 export default function Sidebar() {
+  const path = useLocation();
+  console.log('🚀 ~ Sidebar ~ path:', path);
   return (
     <div className=" bg-slate-100 h-screen  p-6  flex flex-col justify-between">
       {/* Profile Section */}
-      <div >
+      <div>
         <div className="flex items-center space-x-3">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4YreOWfDX3kK-QLAbAL4ufCPc84ol2MA8Xg&s"
-            alt="Bicky yadav"
-            className="w-12 h-12 rounded-full"
-          />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4YreOWfDX3kK-QLAbAL4ufCPc84ol2MA8Xg&s" alt="Bicky yadav" className="w-12 h-12 rounded-full" />
           <div>
             <h2 className="text-lg font-semibold">Bicky Yadav</h2>
             <p className="text-gray-500 text-sm">Developer</p>
@@ -25,7 +18,12 @@ export default function Sidebar() {
         </div>
         <nav className="mt-6 space-y-2">
           {navbar.map(item => (
-            <NavLink to={item.path} key={item.name} href={`#${item.name.toLowerCase()}`} className="flex items-center space-x-2 p-2 text-gray-700 hover:bg-gray-200 rounded-md transition">
+            <NavLink
+              to={item.path}
+              key={item.name}
+              href={`#${item.name.toLowerCase()}`}
+              className={`flex items-center space-x-2 p-2 text-gray-700 ${path.pathname === item.path ? 'bg-slate-300' : ' '} hover: rounded-md transition`}
+            >
               <span>{item.icon}</span>
               <span>{item.name}</span>
             </NavLink>
@@ -43,9 +41,9 @@ export default function Sidebar() {
           </div>
         </div>
       </div>
-      <button onClick={() => openInNewTab('https://resume.io/resume-examples/driver')} className="bg-black text-white px-4 py-2 rounded-full shadow-md hover:bg-gray-800 transition">
+      <NavLink to="https://resume.io/resume-examples/driver" target="_" className="bg-black text-white px-4 py-2 rounded-full shadow-md hover:bg-gray-800 transition">
         Read Resume →
-      </button>
+      </NavLink>
     </div>
   );
 }
