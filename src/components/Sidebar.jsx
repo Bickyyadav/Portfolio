@@ -1,9 +1,11 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { navbar, social } from '../../public/data.jsx';
 import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { BioContext } from '../context/index.jsx';
 
 export default function Sidebar() {
+const myname = useContext(BioContext)
   const [isOpen, setIsOpen] = useState(true);
   const path = useLocation();
 
@@ -27,7 +29,7 @@ export default function Sidebar() {
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4YreOWfDX3kK-QLAbAL4ufCPc84ol2MA8Xg&s" alt="Bicky Yadav" className="w-10 h-10 rounded-full" />
           {isOpen && (
             <div>
-              <h2 className="text-sm font-semibold">Bicky Yadav</h2>
+              <h2 className="text-sm font-semibold">{myname}</h2>
               <p className="text-gray-500 text-sm">Developer</p>
             </div>
           )}

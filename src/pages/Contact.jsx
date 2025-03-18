@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Footer from '../components/footer';
 
 const Contact = () => {
   const [contact, setContact] = useState({
@@ -50,9 +51,12 @@ const Contact = () => {
           </div>
 
           <textarea className=" row-span-full h-56 bg-neutral-100 mt-6 w-full  px-2 py-2" value={contact.message} onChange={handleInputChanges} name="message" placeholder="contact"></textarea>
-          <button className="w-full bg-neutral-100 mt-5 px-3 py-1">click Me</button>
+          <button className="w-full bg-neutral-100 mt-5 px-3 py-1">Submit</button>
         </form>
       </div>
+      <div className=' mt-60'>
+        <Footer/>
+    </div>
     </div>
   );
 };
