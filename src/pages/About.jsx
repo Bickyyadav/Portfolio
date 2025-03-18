@@ -5,7 +5,6 @@ const About = () => {
     <div className=' h-screen'>
       <div className=' px-48 py-20 flex flex-col gap-5'>
         <div>
-
         <h1 className=' text-4xl'> 💬</h1>
         <h1 className=' text-gray-700 text-4xl font-bold '>About Me</h1>
         </div>
