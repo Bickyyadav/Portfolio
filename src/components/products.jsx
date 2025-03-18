@@ -1,49 +1,70 @@
+import { useParams } from "react-router-dom";
+import Card from "./card";
+import Product_array from "./ProjectData.jsx";
+import ProjectCard from "./ProjectCard.jsx";
 
-import Card from "./card"
+
+console.log(Product_array);
 
 
 
 export default function Products() {
+const params = useParams()
+console.log('Params: ',params);
 
-        const product_array = [
-            {
-                tittle: "Aceternity",
-                description: "A design and development studio that focus on the website.",
-                techStack: ["NextJS"," Tailwindcss"],
-                image: "image.jpeg"
-            },
-            {
-                tittle: "Algochurn",
-                description: "Practive for Technical Interview with hands on coding challanges.",
-                techStack: ["NextJS"," Tailwindcss"],
-                image: "image.jpeg"
-            },
-            {
-                tittle: "Moonbean",
-                description: "Never write from scratch again with Moonbeam, Your first writing tool.",
-                techStack: ["NextJS", "Tailwindcss"],
-                image: "image.jpeg"
-            },
-            {
-                tittle: "Tailwind Master Kit",
-                description: "A beautiful and Comprenshive Tailwind CSS components library for building modern websites and applications.",
-                techStack:  ["NextJS"," Tailwindcss"],
-                image: "image.jpeg"
-            }
-        ] 
+console.log(params.project);
 
 
 
-    return (
+return params.project === 'project' ? (<div>
+        <div className="px-44">
+                    <p className="mt-24 text-4xl">⚡</p>
+                    <p className=" font-bold text-gray-700 text-4xl">What I've been working on</p>
+                  </div>
+      <div className=" py-10 grid grid-cols-1  gap-10 ">
+        {Product_array.map(({ tittle, description, techStack, image }) => {
+          return (
+            <ProjectCard
+              key={tittle}
+              tittle={tittle}
+              description={description}
+              image={image}
+              techStack={techStack}
+            />
+          );
+        })}
+      </div> 
+   
+   
+   
+   
+   
+   </div>) 
 
-        <div>
+
+// OR----------
+:  
+// OR----------
+
+
+
+        (<div><div className="px-44">
+                    <p className=" font-bold text-gray-600 text-xl">What I've been working on</p>
+                  </div>
       <div className="grid grid-cols-1  gap-10 ">
-            {product_array.map(({tittle,description,techStack,image}) => {
-                return <Card key={tittle} tittle={tittle} description={description} image={image} techStack={techStack} />
-            })}
-
+        {Product_array.map(({ tittle, description, techStack, image }) => {
+          return (
+            <Card
+              key={tittle}
+              tittle={tittle}
+              description={description}
+              image={image}
+              techStack={techStack}
+            />
+          );
+        })}
       </div>
-            </div>
+    </div>)
 
-    )
+  
 }

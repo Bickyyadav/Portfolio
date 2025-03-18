@@ -1,5 +1,6 @@
 import React from 'react';
 import Products from '../components/products';
+import Footer from '../components/footer';
 
 function Home() {
   return (
@@ -17,11 +18,10 @@ function Home() {
           </div>
         </div>
         <div>
-          <div className="px-44">
-            <p className=" font-bold text-gray-600 text-xl">What I've been working on</p>
-          </div>
+          
         </div>
         <Products />
+        <Footer/>
       </div>
   );
 }

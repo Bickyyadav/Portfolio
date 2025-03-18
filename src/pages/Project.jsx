@@ -1,9 +1,15 @@
 import React from 'react'
+import Products from '../components/products'
+import Footer from '../components/footer'
 
 const Project = () => {
   return (
-    <div >Project</div>
+    <>
+    <Products/>
+    <Footer/>
+    </>
   )
 }
+
 
 export default Project

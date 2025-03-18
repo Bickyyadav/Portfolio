@@ -7,6 +7,8 @@ export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(true);
   const path = useLocation();
 
+
+  
   return (
     <div className={`bg-slate-100 h-screen p-4 flex flex-col justify-between transition-all duration-300
       ${isOpen ? 'w-64' : 'w-20'} fixed md:relative`}>

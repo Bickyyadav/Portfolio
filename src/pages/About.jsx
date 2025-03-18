@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../components/footer'
 
 const About = () => {
   return (
@@ -20,10 +21,9 @@ const About = () => {
           <p className=' text-gray-400 text-lg py-3 w-[55rem]'>What drives me is not just mastering the latest tools but also using them ethically to make a meaningful impact. I am committed to designing systems that are fair, transparent, and accessible. Continuously learning and adapting to new trends is crucial, and I actively engage in self-learning through courses, research, and collaboration with others.</p>
           <p className=' text-gray-400 text-lg py-3 w-[55rem]'>Ultimately, my goal is to use my skills to create solutions that improve lives and contribute to positive societal change.</p>
         </div>
-        <div>
-          <p className=' text-gray-400 text-xs flex mx-64 mb-0'>2025 — Built by Prem Sah</p>
-        </div>
+        
       </div>
+      <Footer/>
     </div>
   );
 };

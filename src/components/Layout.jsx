@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
       </div>
 
       {/* Main Content with hidden scrollbar */}
-      <div className=" overflow-y-auto   h-screen col-span-10 ">
+      <div className="  overflow-y-auto   h-screen col-span-10 ">
         {children}
       </div>
     </div>
