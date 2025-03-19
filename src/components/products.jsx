@@ -4,15 +4,15 @@ import Product_array from "./ProjectData.jsx";
 import ProjectCard from "./ProjectCard.jsx";
 
 
-console.log(Product_array);
+// console.log(Product_array);
 
 
 
 export default function Products() {
 const params = useParams()
-console.log('Params: ',params);
+// console.log('Params: ',params);
 
-console.log(params.project);
+// console.log(params.project);
 
 
 

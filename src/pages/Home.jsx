@@ -7,7 +7,7 @@ function Home() {
   const myname = useContext(BioContext);
   return (
     <div>
-      <div className="  px-44 py-20   ">
+      <div className="  px-44 py-20">
         <div className=" h-auto">
           <p className=" text-4xl">👋</p>
           <span className="text-gray-600 text-4xl font-bold">Hello there! I'm {myname}</span>
